@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 
 const CoinsTable = ({ coins }) => {
-  const [searsh, setSearsh] = useState("")
+  const [search, setSearch] = useState("")
 
-  const filterSearsh = coins.filter((coin) =>
-    coin.name.toLowerCase().includes(searsh.toLowerCase()) |
-    coin.symbol.toLowerCase().includes(searsh.toLowerCase()))
-  console.log(filterSearsh[0])
+  const filterSearch = coins.filter((coin) =>
+    coin.name.toLowerCase().includes(search.toLowerCase()) |
+    coin.symbol.toLowerCase().includes(search.toLowerCase()))
+  console.log(filterSearch[0])
   return (
     <div>
       <div className="overflow-x-auto mt-12">
         <div className="mx-6 rounded-md min-w-screen min-h-screen  flex items-start justify-center font-sans overflow-hidden">
           <div className="mx-auto w-full bg-gray-100 ">
       <div className="flex justify-center mt-12">
-        <input className='w-1/2 p-1 bg-gray-800 rounded-lg text-center' type="text" placeholder='searsh' onChange={e => setSearsh(e.target.value)} />
+        <input className='w-1/2 p-1 bg-gray-800 rounded-lg text-center' type="text" placeholder='search' onChange={e => setSearch(e.target.value)} />
       </div>
             <div className="mx-6 shadow-md rounded my-6 ">
               <table className="mx-auto min-w-max w-full table text-gray-400  border-separate  text-sm">
@@ -28,7 +28,7 @@ const CoinsTable = ({ coins }) => {
                   </tr>
                 </thead>
                 <tbody className="my-2 text-gray-600 text-sm font-light">
-                  {filterSearsh.map((coin, index) =>
+                  {filterSearch.map((coin, index) =>
 
                     <tr key={coin.id} className="bg-gray-300 font-bold border border-slate-900 shadow-md hover:shadow-red-500 hover:bg-gray-200 hover:text-gray-900">
                       <td className="py-3 px-6  text-left ">
